@@ -2,11 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Éditeur collaboratif</title>
+  <title>Éditeur collaboratif LaTeX</title>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  <textarea id="editor" style="width:100%;height:90vh;font-family:monospace;"></textarea>
+  <div style="display: flex; height: 100vh;">
+    <div style="flex: 1; padding: 10px;">
+      <h2>Éditeur LaTeX</h2>
+      <textarea id="editor" style="width:100%; height:80%; font-family:monospace;"></textarea><br>
+      <button onclick="downloadPDF()">Télécharger PDF</button>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+      <h2>Prévisualisation PDF</h2>
+      <iframe id="preview" style="width:100%; height:90%;" frameborder="1"></iframe>
+    </div>
+  </div>
   <script src="editor.js"></script>
 </body>
 </html>
